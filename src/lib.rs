@@ -6,7 +6,8 @@ mod tests {
     use rand::distributions::Uniform;
     // use super::chapt2::sort::Sort;
     // use super::chapt2::sort::MergeSort;
-    use super::chapt2::sort::QuickSort;
+    //use super::chapt2::sort::QuickSort;
+    use super::chapt2::heap::Heap;
 
     fn generate_random_item(max_size: i32, max_value: i32) -> Vec<i32> {
         let mut rng = rand::thread_rng();
@@ -33,7 +34,7 @@ mod tests {
         for _ in 0..test_times {
             let mut arr1 = generate_random_item(max_size, max_value);
             let mut arr2 = arr1.clone();
-            QuickSort::quick_sort(&mut arr1);
+            Heap::heap_sort(&mut arr1);
             arr2.sort();
             assert_eq!(arr1, arr2);
         }
