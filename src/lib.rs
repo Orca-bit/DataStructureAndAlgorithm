@@ -1,4 +1,5 @@
 pub mod chapt2;
+mod hash;
 
 #[cfg(test)]
 mod tests {
