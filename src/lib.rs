@@ -1,5 +1,6 @@
 pub mod chapt2;
 mod hash;
+mod listlink;
 
 #[cfg(test)]
 mod tests {
