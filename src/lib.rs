@@ -1,6 +1,7 @@
 pub mod chapt2;
 mod hash;
 mod listlink;
+mod tree;
 
 #[cfg(test)]
 mod tests {
