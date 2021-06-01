@@ -16,6 +16,13 @@ macro_rules! tree {
     };
 }
 
+#[macro_export]
+macro_rules! vec_vec_i32 {
+    ($($tail:tt),*) => {
+        vec![$(vec!$tail),*] as Vec<Vec<i32>>
+    };
+}
+
 use std::cell::RefCell;
 use std::rc::Rc;
 

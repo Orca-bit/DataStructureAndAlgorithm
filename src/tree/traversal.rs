@@ -5,14 +5,15 @@ struct Solution;
 impl Solution {
     fn preorder_traversal_recur(root: TreeLink) -> Vec<i32> {
         let mut res = vec![];
-        fn core(root: TreeLink, v: &mut Vec<i32>) {
+        fn core(root: &TreeLink, v: &mut Vec<i32>) {
             if let Some(node) = root {
-                v.push(node.borrow().val);
-                core(node.borrow().left.clone(), v);
-                core(node.borrow().right.clone(), v);
+                let node = node.borrow();
+                v.push(node.val);
+                core(&node.left, v);
+                core(&node.right, v);
             }
         }
-        core(root, &mut res);
+        core(&root, &mut res);
         res
     }
 
@@ -21,9 +22,10 @@ impl Solution {
         let mut stk = vec![root];
         while let Some(peek) = stk.pop() {
             if let Some(node) = peek {
-                res.push(node.borrow().val);
-                stk.push(node.borrow().right.clone());
-                stk.push(node.borrow().left.clone());
+                let node = node.borrow();
+                res.push(node.val);
+                stk.push(node.right.clone());
+                stk.push(node.left.clone());
             }
         }
         res
@@ -31,14 +33,15 @@ impl Solution {
 
     fn inorder_traversal_recur(root: TreeLink) -> Vec<i32> {
         let mut res = vec![];
-        fn core(root: TreeLink, v: &mut Vec<i32>) {
+        fn core(root: &TreeLink, v: &mut Vec<i32>) {
             if let Some(node) = root {
-                core(node.borrow().left.clone(), v);
-                v.push(node.borrow().val);
-                core(node.borrow().right.clone(), v);
+                let node = node.borrow();
+                core(&node.left, v);
+                v.push(node.val);
+                core(&node.right, v);
             }
         }
-        core(root, &mut res);
+        core(&root, &mut res);
         res
     }
 
@@ -97,5 +100,5 @@ impl Solution {
 fn test() {
     let root = tree!(1, None, tree!(2, tree!(3), None));
     let res = vec![1, 3, 2];
-    assert_eq!(Solution::inorder_traversal_recur(root), res);
+    assert_eq!(Solution::inorder_traversal_unrecur(root), res);
 }
