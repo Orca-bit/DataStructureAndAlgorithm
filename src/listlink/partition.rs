@@ -3,30 +3,35 @@ use super::util::*;
 struct Solution;
 
 impl Solution {
-    fn partition(head: ListLink, x: i32) -> ListLink {
-        let mut p = head;
+    fn partition(mut head: ListLink, x: i32) -> ListLink {
         let mut left = vec![];
         let mut mid = vec![];
         let mut right = vec![];
-        while let Some(node) = p {
+        while let Some(mut node) = head {
+            head = node.next.take();
             if node.val < x {
-                left.push(node.val);
+                left.push(Some(node));
             } else if node.val > x {
-                right.push(node.val);
+                right.push(Some(node));
             } else {
-                mid.push(node.val);
+                mid.push(Some(node));
             }
-            p = node.next;
         }
         let mut res = None;
-        while let Some(val) = right.pop() {
-            res = ListLink::link(val, res);
+        while let Some(link) = right.pop() {
+            let mut node = link.unwrap();
+            node.next = res;
+            res = Some(node);
         }
-        while let Some(val) = mid.pop() {
-            res = ListLink::link(val, res);
+        while let Some(link) = mid.pop() {
+            let mut node = link.unwrap();
+            node.next = res;
+            res = Some(node);
         }
-        while let Some(val) = left.pop() {
-            res = ListLink::link(val, res);
+        while let Some(link) = left.pop() {
+            let mut node = link.unwrap();
+            node.next = res;
+            res = Some(node);
         }
         res
     }
