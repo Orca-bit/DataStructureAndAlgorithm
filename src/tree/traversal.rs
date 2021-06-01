@@ -8,8 +8,8 @@ impl Solution {
         fn core(root: TreeLink, v: &mut Vec<i32>) {
             if let Some(node) = root {
                 v.push(node.borrow().val);
-                core(node.borrow_mut().left.take(), v);
-                core(node.borrow_mut().right.take(), v);
+                core(node.borrow().left.clone(), v);
+                core(node.borrow().right.clone(), v);
             }
         }
         core(root, &mut res);
@@ -22,8 +22,8 @@ impl Solution {
         while let Some(peek) = stk.pop() {
             if let Some(node) = peek {
                 res.push(node.borrow().val);
-                stk.push(node.borrow_mut().right.take());
-                stk.push(node.borrow_mut().left.take());
+                stk.push(node.borrow().right.clone());
+                stk.push(node.borrow().left.clone());
             }
         }
         res
@@ -33,9 +33,9 @@ impl Solution {
         let mut res = vec![];
         fn core(root: TreeLink, v: &mut Vec<i32>) {
             if let Some(node) = root {
-                core(node.borrow_mut().left.take(), v);
+                core(node.borrow().left.clone(), v);
                 v.push(node.borrow().val);
-                core(node.borrow_mut().right.take(), v);
+                core(node.borrow().right.clone(), v);
             }
         }
         core(root, &mut res);
@@ -47,13 +47,13 @@ impl Solution {
         let mut stk = vec![];
         while !stk.is_empty() || root.is_some() {
            if let Some(node) = root {
-               root = node.borrow_mut().left.take();
+               root = node.borrow().left.clone();
                stk.push(Some(node));
            } else {
                let peek = stk.pop().unwrap();
                if let Some(node) = peek {
                    res.push(node.borrow().val);
-                   root = node.borrow_mut().right.take();
+                   root = node.borrow().right.clone();
                }
            }
         }
@@ -64,8 +64,8 @@ impl Solution {
         let mut res = vec![];
         fn core(root: TreeLink, v: &mut Vec<i32>) {
             if let Some(node) = root {
-                core(node.borrow_mut().left.take(), v);
-                core(node.borrow_mut().right.take(), v);
+                core(node.borrow().left.clone(), v);
+                core(node.borrow().right.clone(), v);
                 v.push(node.borrow().val);
             }
         }
@@ -79,8 +79,8 @@ impl Solution {
         let mut stk2 = vec![];
         while let Some(peek) = stk1.pop() {
             if let Some(node) = peek {
-                stk1.push(node.borrow_mut().left.take());
-                stk1.push(node.borrow_mut().right.take());
+                stk1.push(node.borrow().left.clone());
+                stk1.push(node.borrow().right.clone());
                 stk2.push(Some(node));
             }
         }
@@ -96,6 +96,6 @@ impl Solution {
 #[test]
 fn test() {
     let root = tree!(1, None, tree!(2, tree!(3), None));
-    let res = vec![1, 2, 3];
-    assert_eq!(Solution::preorder_traversal_unrecur(root), res);
+    let res = vec![1, 3, 2];
+    assert_eq!(Solution::inorder_traversal_recur(root), res);
 }
