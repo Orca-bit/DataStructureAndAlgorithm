@@ -1,12 +1,13 @@
 pub mod chapt2;
+mod graph;
 mod hash;
 mod listlink;
 mod tree;
 
 #[cfg(test)]
 mod tests {
-    use rand::Rng;
     use rand::distributions::Uniform;
+    use rand::Rng;
     // use super::chapt2::sort::Sort;
     // use super::chapt2::sort::MergeSort;
     // use super::chapt2::sort::QuickSort;
@@ -26,7 +27,7 @@ mod tests {
     fn it_works() {
         let max_size = 100;
         let max_value = 90;
-        println!("{:?}",generate_random_item(max_size, max_value));
+        println!("{:?}", generate_random_item(max_size, max_value));
         assert_eq!(2 + 2, 4);
     }
 
