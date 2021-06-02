@@ -23,8 +23,8 @@ macro_rules! vec_vec_i32 {
     };
 }
 
-use std::cell::RefCell;
-use std::rc::Rc;
+pub use std::cell::RefCell;
+pub use std::rc::Rc;
 
 pub trait TreeMaker {
     fn branch(val: i32, left: TreeLink, right: TreeLink) -> TreeLink {

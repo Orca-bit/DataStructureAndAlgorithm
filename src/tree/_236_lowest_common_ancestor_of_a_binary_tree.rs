@@ -1,4 +1,5 @@
 use super::util::*;
+
 struct Solution;
 
 impl Solution {
@@ -6,27 +7,41 @@ impl Solution {
         let p_val = p.unwrap().borrow().val;
         let q_val = q.unwrap().borrow().val;
         let mut res = None;
-        root.find_lca(p_val, q_val, &mut res);
+        let _ = root.find_lca(p_val, q_val, &mut res);
         res
     }
 }
 
 trait Recur {
-    fn find_lca(&self, p_val: i32, q_val: i32, lca: &mut TreeLink) -> (bool, bool);
+    fn find_lca(&self, p_val: i32, q_val: i32, lca: &mut TreeLink) -> ReturnData;
 }
 
 impl Recur for TreeLink {
-    fn find_lca(&self, p_val: i32, q_val: i32, lca: &mut TreeLink) -> (bool, bool) {
+    fn find_lca(&self, p_val: i32, q_val: i32, lca: &mut TreeLink) -> ReturnData {
         if let Some(node) = self {
             let val = node.borrow().val;
             let left = node.borrow().left.find_lca(p_val, q_val, lca);
-            let right= node.borrow().right.find_lca(p_val, q_val, lca);
-            let res = (left.0 || right.0 || val == p_val, left.1 || right.1 || val == q_val);
-            if lca.is_none() && res.0 && res.1 {
-                *lca = Some(node.clone());
+            let right = node.borrow().right.find_lca(p_val, q_val, lca);
+            let res = ReturnData::new(
+                left.have_p || right.have_p || val == p_val,
+                left.have_q || right.have_q || val == q_val,
+            );
+            if lca.is_none() && res.have_p && res.have_q {
+                *lca = Some(Rc::clone(&node)); //第一次满足条件时设置为公共祖先，之后lca.is_some()
             }
             return res;
         }
-        (false, false)
+        ReturnData::new(false, false)
+    }
+}
+
+struct ReturnData {
+    have_p: bool,
+    have_q: bool,
+}
+
+impl ReturnData {
+    fn new(have_p: bool, have_q: bool) -> Self {
+        Self { have_p, have_q }
     }
 }
