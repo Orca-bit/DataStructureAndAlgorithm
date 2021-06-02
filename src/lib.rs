@@ -2,6 +2,7 @@ pub mod chapt2;
 mod graph;
 mod hash;
 mod listlink;
+mod string_problem;
 mod tree;
 
 #[cfg(test)]
