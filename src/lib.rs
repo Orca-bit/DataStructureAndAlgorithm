@@ -4,6 +4,8 @@ mod hash;
 mod listlink;
 mod string_problem;
 mod tree;
+mod greedy;
+mod other;
 
 #[cfg(test)]
 mod tests {
