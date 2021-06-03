@@ -28,8 +28,7 @@ impl Trie {
             let mut link = self;
             link.path -= 1;
             for c in word.chars() {
-                let checker = link;
-                link = checker.children.entry(c).or_default();
+                link =link.children.get_mut(&c).unwrap();
                 link.path -= 1;
             }
             link.end -= 1;
