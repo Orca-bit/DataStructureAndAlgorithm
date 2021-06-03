@@ -23,6 +23,19 @@ impl Trie {
         link.end += 1;
     }
 
+    fn delete(&mut self, word: String) {
+        if Self::search(&self,word.clone()) {
+            let mut link = self;
+            link.path -= 1;
+            for c in word.chars() {
+                let checker = link;
+                link = checker.children.entry(c).or_default();
+                link.path -= 1;
+            }
+            link.end -= 1;
+        }
+    }
+
     fn search(&self, word: String) -> bool {
         let mut link = self;
         for c in word.chars() {
@@ -51,16 +64,15 @@ impl Trie {
 #[test]
 fn test() {
     let mut trie = Trie::new();
-    let word = "apple".to_string();
-    trie.insert(word);
-    let word = "apple".to_string();
-    assert_eq!(trie.search(word), true);
-    let word = "app".to_string();
-    assert_eq!(trie.search(word), false);
+    trie.insert("apple".to_string());
+    assert_eq!(trie.search("apple".to_string()), true);
+    assert_eq!(trie.search("app".to_string()), false);
     trie.insert("app".to_string());
     assert_eq!(trie.search("app".to_string()), true);
-    let word = "app".to_string();
-    assert_eq!(trie.starts_with(word), 2);
+    assert_eq!(trie.starts_with("app".to_string()), 2);
+    trie.delete("apple".to_string());
+    assert_eq!(trie.search("apple".to_string()), false);
+    assert_eq!(trie.starts_with("app".to_string()), 1);
 }
 
 #[test]
