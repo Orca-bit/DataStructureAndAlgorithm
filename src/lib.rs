@@ -6,6 +6,7 @@ mod string_problem;
 mod tree;
 mod greedy;
 mod other;
+mod recursion;
 
 #[cfg(test)]
 mod tests {
