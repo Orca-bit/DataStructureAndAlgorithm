@@ -4,7 +4,6 @@ impl Solution {
     pub fn hanota(a: &mut Vec<i32>, b: &mut Vec<i32>, c: &mut Vec<i32>) {
         let n = a.len();
         Self::process(n, a, b, c);
-
     }
     fn process(n: usize, from: &mut Vec<i32>, mid: &mut Vec<i32>, to: &mut Vec<i32>) {
         if n == 1 {

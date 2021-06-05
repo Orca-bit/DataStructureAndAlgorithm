@@ -6,7 +6,7 @@ struct Program {
 
 impl Program {
     fn new(start: u32, end: u32) -> Self {
-        if start < 0 || end > 23 || end < start {
+        if end > 23 || end < start {
             panic!("Please input the correct time");
         }
         Self { start, end }

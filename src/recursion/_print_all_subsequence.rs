@@ -5,7 +5,10 @@ fn print_all_subsequence(s: &str) {
 
 fn process(v: &mut Vec<char>, i: usize) {
     if i == v.len() {
-        let s = v.iter().filter(|&&c| !c.is_whitespace()).collect::<String>();
+        let s = v
+            .iter()
+            .filter(|&&c| !c.is_whitespace())
+            .collect::<String>();
         println!("{}", s);
         return;
     }
