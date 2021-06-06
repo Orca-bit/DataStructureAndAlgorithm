@@ -7,6 +7,7 @@ mod tree;
 mod greedy;
 mod other;
 mod recursion;
+mod union_find;
 
 #[cfg(test)]
 mod tests {
