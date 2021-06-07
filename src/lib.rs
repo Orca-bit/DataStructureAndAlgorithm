@@ -8,6 +8,7 @@ mod greedy;
 mod other;
 mod recursion;
 mod union_find;
+mod slide_window;
 
 #[cfg(test)]
 mod tests {
