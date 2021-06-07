@@ -35,7 +35,7 @@ impl KMP {
         let mut next = vec![0; s.len()];
         next[0] = -1;
         let mut pos = 2;    // pos为当前处理的位置
-        let mut cn = 0;     // cn为对比的位置
+        let mut cn = 0;     // cn为对比的位置，每次对比时的初始位置为之前一个位置的结果
         while pos < next.len() {
             if s[pos - 1] == s[cn] {        // 第一种情况，当前位置与对比位置的字符相等
                 cn += 1;

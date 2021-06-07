@@ -12,7 +12,7 @@ impl Solution {
                 queue.pop_back();
             }
             queue.push_back(i);
-            if *queue.front().unwrap() as i32 == i as i32 - k as i32 {
+            if *queue.front().unwrap() as i32 == i as i32 - k as i32 { // 头部过期也要弹出
                 queue.pop_front();
             }
             if i + 1 >= k {
