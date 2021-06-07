@@ -9,6 +9,7 @@ mod other;
 mod recursion;
 mod union_find;
 mod slide_window;
+mod mono_stack;
 
 #[cfg(test)]
 mod tests {
