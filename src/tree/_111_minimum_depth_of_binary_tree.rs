@@ -1,4 +1,5 @@
 use super::util::*;
+use std::cmp::min;
 use std::collections::VecDeque;
 
 struct Solution;
@@ -9,7 +10,7 @@ impl Solution {
             return 0;
         }
         let mut que = VecDeque::new();
-        que.push_back((root.clone() ,1));
+        que.push_back((root.clone(), 1));
         while let Some((link, depth)) = que.pop_front() {
             if let Some(node) = link {
                 let node = node.borrow();
@@ -38,14 +39,7 @@ impl Solution {
                 let node = node.borrow();
                 match (&node.left, &node.right) {
                     (None, None) => 1,
-                    (Some(_), None) => Self::process(&node.left) + 1,
-                    (None, Some(_)) => Self::process(&node.right) + 1,
-                    (Some(_), Some(_)) => {
-                        usize::min(
-                            Self::process(&node.left),
-                            Self::process(&node.right)
-                        ) + 1
-                    }
+                    (_, _) => min(Self::process(&node.left), Self::process(&node.right)) + 1,
                 }
             }
         }
@@ -55,5 +49,5 @@ impl Solution {
 #[test]
 fn test() {
     let root = tree!(3, tree!(9), tree!(20, tree!(15), tree!(7)));
-    assert_eq!(Solution::min_depth_1(root), 2);
+    assert_eq!(Solution::min_depth(root), 2);
 }

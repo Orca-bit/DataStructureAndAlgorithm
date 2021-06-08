@@ -9,3 +9,6 @@ mod _622_maximum_width_of_binary_tree;
 mod _98_validate_binary_search_tree;
 mod print_folds;
 mod traversal;
+mod _build_tree;
+mod _get_max_distance;
+mod _get_max_happy;
