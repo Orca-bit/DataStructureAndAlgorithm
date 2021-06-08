@@ -1,15 +1,16 @@
+mod bit_operation;
 pub mod chapt2;
 mod graph;
+mod greedy;
 mod hash;
 mod listlink;
-mod string_problem;
-mod tree;
-mod greedy;
+mod mono_stack;
 mod other;
 mod recursion;
-mod union_find;
 mod slide_window;
-mod mono_stack;
+mod string_problem;
+mod tree;
+mod union_find;
 
 #[cfg(test)]
 mod tests {
