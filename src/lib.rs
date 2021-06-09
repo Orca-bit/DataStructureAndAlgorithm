@@ -1,5 +1,6 @@
 mod bit_operation;
 pub mod chapt2;
+mod dp;
 mod graph;
 mod greedy;
 mod hash;
