@@ -48,10 +48,10 @@ impl Solution {
         }
         for index in (0..coins.len()).rev() {
             for rest in 0..=amount as usize {
-                dp[index][rest] = -1;
-                if dp[index + 1][rest] != -1 {
-                    dp[index][rest] = dp[index + 1][rest];
-                }
+                // dp[index][rest] = -1;
+                // if dp[index + 1][rest] != -1 {
+                dp[index][rest] = dp[index + 1][rest];
+                // }
                 if rest as i32 - coins[index] >= 0 && dp[index][rest - coins[index] as usize] != -1
                 {
                     if dp[index][rest] == -1 {

@@ -26,6 +26,25 @@ impl Solution {
             Self::first_hand(nums, left, right - 1),
         )
     }
+
+    fn dp(nums: Vec<i32>) -> bool {
+        let n = nums.len();
+        let mut first_hand_dp = vec![vec![0; n]; n];
+        let mut second_hand_dp = vec![vec![0; n]; n];
+        for i in 0..n {
+            first_hand_dp[i][i] = nums[i];
+        }
+        for i in (0..(n - 1)).rev() {
+            for j in (i + 1)..n {
+                first_hand_dp[i][j] = max(
+                    nums[i] + second_hand_dp[i + 1][j],
+                    nums[j] + second_hand_dp[i][j - 1],
+                );
+                second_hand_dp[i][j] = min(first_hand_dp[i + 1][j], first_hand_dp[i][j - 1]);
+            }
+        }
+        first_hand_dp[0][n - 1] >= second_hand_dp[0][n - 1]
+    }
 }
 
 #[test]
@@ -35,5 +54,5 @@ fn test() {
     assert_eq!(Solution::predict_the_winner(nums), res);
     let nums = vec![1, 5, 233, 7];
     let res = true;
-    assert_eq!(Solution::predict_the_winner(nums), res);
+    assert_eq!(Solution::dp(nums), res);
 }

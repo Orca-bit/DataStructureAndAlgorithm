@@ -1,2 +1,3 @@
 mod _robot_walk;
 mod _322_coin_change;
+mod _688_knight_probability_in_chessboard;
