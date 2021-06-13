@@ -67,6 +67,9 @@ impl Solution {
                     let min_step = min(step1, step2);
                     dp[i][j] = min(dp[i][j], min_step + dp[k][j + 1]);
                 }
+                if i == 0 && j == 0 {   //第零行只需要计算dp[0][0]
+                    break;
+                }
             }
         }
         dp[0][0] + m as i32
