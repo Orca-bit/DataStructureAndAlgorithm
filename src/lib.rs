@@ -12,6 +12,7 @@ mod slide_window;
 mod string_problem;
 mod tree;
 mod union_find;
+mod ali;
 
 #[cfg(test)]
 mod tests {
