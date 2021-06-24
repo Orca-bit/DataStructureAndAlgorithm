@@ -1,5 +1,10 @@
+mod _1143_longest_common_subsequence;
+mod _1312_min_insert;
+mod _132_palindrome_partition_2;
 mod _208_implement_trie;
+mod _516_longest_palindrome_subseq;
 mod _796_rotate_string;
 mod _get_value_from_string;
 mod _kmp;
 mod _manacher;
+mod _remove_methods_to_palindrome;
