@@ -5,4 +5,5 @@ mod _518_coin_change_2;
 mod _688_knight_probability_in_chessboard;
 mod _96_unique_bst;
 mod _most_0xor_partition;
+mod _num_decompose;
 mod _robot_walk;
