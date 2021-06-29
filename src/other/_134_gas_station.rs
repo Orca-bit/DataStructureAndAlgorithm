@@ -11,12 +11,26 @@ impl Solution {
                 init = i;
             }
         }
+        let get_next_index = |now: usize| -> usize {
+            if now == n - 1 {
+                0
+            } else {
+                now + 1
+            }
+        };
+        let get_last_index = |now: usize| -> usize {
+            if now == 0 {
+                n - 1
+            } else {
+                now - 1
+            }
+        };
         let mut start = init;
-        let mut end = if start == n - 1 { 0 } else { start + 1 };
+        let mut end = get_next_index(start);
         let mut need = 0;
         let mut rest = 0;
         loop {
-            if start != init && start == if end == 0 { n - 1 } else { end - 1 } {
+            if start != init && start == get_last_index(end) {
                 break;
             }
             if cost[start] < need {
@@ -26,14 +40,14 @@ impl Solution {
                 need = 0;
                 while rest >= 0 && end != start {
                     rest += cost[end];
-                    end = if end == n - 1 { 0 } else { end + 1 };
+                    end = get_next_index(end);
                 }
                 if rest >= 0 {
                     res = start as i32;
                     break;
                 }
             }
-            start = if start == 0 { n - 1 } else { start - 1 };
+            start = get_last_index(start);
             if start == init {
                 break;
             }
