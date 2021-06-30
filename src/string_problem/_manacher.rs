@@ -1,20 +1,19 @@
-use std::cmp::{max, min};
-
 struct Manacher;
 
 impl Manacher {
-    fn longest_palindrome(s: &str) -> usize {
+    fn longest_palindrome(s: String) -> String {
         if s.is_empty() {
-            return 0;
+            return "".to_string();
         }
-        let manacher_str = Self::manacher_string(s);
+        let manacher_str = Self::manacher_string(&*s);
         let mut p_arr = vec![1; manacher_str.len()]; // 回文半径数组
         let mut center = 0;
         let mut right = 0;
         let mut longest = 0;
+        let mut res_center = 0;
         for i in 0..manacher_str.len() {
             p_arr[i] = if right > i {
-                min(p_arr[2 * center - i], right - i)
+                p_arr[2 * center - i].min(right - i)
             } else {
                 1
             };
@@ -29,9 +28,16 @@ impl Manacher {
                 right = i + p_arr[i];
                 center = i;
             }
-            longest = max(longest, p_arr[i]);
+            if longest < p_arr[i] {
+                longest = p_arr[i];
+                res_center = i;
+            }
         }
-        longest - 1 // manacher串最长回文半径 - 1 为原串最长回文长度
+        // longest - 1 // manacher串最长回文半径 - 1 为原串最长回文长度
+        manacher_str[res_center + 1 - longest..res_center + longest]
+            .iter()
+            .filter(|&&c| c != '#')
+            .collect()
     }
 
     fn manacher_string(s: &str) -> Vec<char> {
@@ -48,5 +54,5 @@ impl Manacher {
 #[test]
 fn test() {
     let s = "aaabaaaa".to_string();
-    assert_eq!(Manacher::longest_palindrome(&s), 7);
+    assert_eq!(Manacher::longest_palindrome(s), "aaabaaa".to_string());
 }
