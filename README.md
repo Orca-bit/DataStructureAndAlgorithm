@@ -1,2 +1,2 @@
 # DataStructureAndAlgorithm
-rust练习左大神数据结构课程
+:octocat:Rust刷题，多快好省
