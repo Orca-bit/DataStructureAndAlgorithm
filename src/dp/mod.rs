@@ -1,11 +1,14 @@
 mod _10_regular_expression_matching;
+mod _312_burst_balloons;
 mod _322_coin_change;
 mod _44_wildcard_matching;
 mod _514_freedom_trail;
 mod _518_coin_change_2;
+mod _62_unique_paths;
+mod _64_minimum_path_sum;
 mod _688_knight_probability_in_chessboard;
+mod _70_climb_stairs;
 mod _96_unique_bst;
 mod _most_0xor_partition;
 mod _num_decompose;
 mod _robot_walk;
-mod _312_burst_balloons;

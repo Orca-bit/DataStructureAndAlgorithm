@@ -29,7 +29,7 @@ impl Solution {
         res: &mut Vec<String>,
         path: &mut String,
     ) {
-        if index == digits.len() {
+        if path.len() == digits.len() {
             res.push(path.clone().to_string());
             return;
         }
