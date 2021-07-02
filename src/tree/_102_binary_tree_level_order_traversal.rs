@@ -1,31 +1,34 @@
 use super::util::*;
+use std::collections::VecDeque;
+
 struct Solution;
 
 impl Solution {
     fn level_order(root: TreeLink) -> Vec<Vec<i32>> {
-        let mut res = vec![];
-        root.preorder(0, &mut res);
-        res
-    }
-}
-
-trait Preorder {
-    fn preorder(&self, level: usize, v: &mut Vec<Vec<i32>>);
-}
-
-impl Preorder for TreeLink {
-    fn preorder(&self, level: usize, v: &mut Vec<Vec<i32>>) {
-        if let Some(node) = self {
-            let node = node.borrow();
-            let val = node.val;
-            if v.len() == level {
-                v.push(vec![val]);
-            } else {
-                v[level].push(val);
+        let core = || -> Option<Vec<Vec<i32>>> {
+            let mut res = vec![];
+            let mut queue = VecDeque::new();
+            if root.is_some() {
+                queue.push_back(root.clone());
             }
-            node.left.preorder(level + 1, v);
-            node.right.preorder(level + 1, v);
-        }
+            while !queue.is_empty() {
+                let mut cur = vec![];
+                let size = queue.len();
+                for _ in 0..size {
+                    let head = queue.pop_front()?;
+                    if head.is_some() {
+                        cur.push(head.clone()?.borrow().val);
+                        queue.push_back(head.clone()?.borrow().left.clone());
+                        queue.push_back(head.clone()?.borrow().right.clone());
+                    }
+                }
+                if !cur.is_empty() {
+                    res.push(cur);
+                }
+            }
+            Some(res)
+        };
+        core().unwrap()
     }
 }
 

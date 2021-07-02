@@ -8,6 +8,7 @@ mod _62_unique_paths;
 mod _64_minimum_path_sum;
 mod _688_knight_probability_in_chessboard;
 mod _70_climb_stairs;
+mod _72_edit_distance;
 mod _96_unique_bst;
 mod _most_0xor_partition;
 mod _num_decompose;

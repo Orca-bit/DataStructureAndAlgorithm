@@ -3,6 +3,8 @@ mod _22_generate_parenthesis;
 mod _39_combination_sum;
 mod _46_permutations;
 mod _486_predict_the_winner;
+mod _78_subsets;
+mod _79_word_search;
 mod _hanota;
 mod _num_to_digit;
 mod _permutation;

@@ -22,5 +22,6 @@ mod _55_jump_game;
 mod _56_merge_intervals;
 mod _692_top_k_frequent_words;
 mod _74_search_a_2d_matrix;
+mod _75_sort_colors;
 mod _largest_xor;
 mod _least_boat;
