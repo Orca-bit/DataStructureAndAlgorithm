@@ -40,7 +40,7 @@ impl Solution {
         if l1 == r1 {
             return Some(head);
         }
-        let find = *map.get(&preorder[l1 as usize]).unwrap() as i32;
+        let find = *map.get(&preorder[l1 as usize])? as i32;
         head.borrow_mut().left =
             Self::process(preorder, l1 + 1, l1 + find - l2, inorder, l2, find - 1, map);
         head.borrow_mut().right =

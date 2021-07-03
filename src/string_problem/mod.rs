@@ -1,6 +1,7 @@
 mod _1143_longest_common_subsequence;
 mod _1312_min_insert;
 mod _132_palindrome_partition_2;
+mod _139_word_break;
 mod _208_implement_trie;
 mod _32_longest_valid_parentheses;
 mod _3_length_of_longest_substring;

@@ -1,4 +1,5 @@
 mod _10_regular_expression_matching;
+mod _198_house_robber;
 mod _312_burst_balloons;
 mod _322_coin_change;
 mod _44_wildcard_matching;
