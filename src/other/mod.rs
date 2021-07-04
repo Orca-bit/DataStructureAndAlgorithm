@@ -10,6 +10,7 @@ mod _155_min_stack;
 mod _15_three_sum;
 mod _169_majority_element;
 mod _20_valid_parentheses;
+mod _215_kth_largest_element_in_an_array;
 mod _218_the_skyline_problem;
 mod _240_search_a_2d_matrix_2;
 mod _295_find_median_from_data_stream;

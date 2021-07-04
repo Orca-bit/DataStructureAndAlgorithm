@@ -4,13 +4,13 @@ use super::util::*;
 impl Solution {
     fn reverse_list(head: ListLink) -> ListLink {
         let mut p = head;
-        let mut prev = None;
+        let mut pre = None;
         while let Some(mut node) = p.take() {
             p = node.next;
-            node.next = prev;
-            prev = Some(node);
+            node.next = pre;
+            pre = Some(node);
         }
-        prev
+        pre
     }
 }
 

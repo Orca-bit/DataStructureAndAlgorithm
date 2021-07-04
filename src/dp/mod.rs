@@ -1,5 +1,6 @@
 mod _10_regular_expression_matching;
 mod _198_house_robber;
+mod _221_maximal_square;
 mod _312_burst_balloons;
 mod _322_coin_change;
 mod _44_wildcard_matching;
@@ -9,6 +10,7 @@ mod _62_unique_paths;
 mod _64_minimum_path_sum;
 mod _688_knight_probability_in_chessboard;
 mod _70_climb_stairs;
+mod _718_maximum_length_of_repeated_subarray;
 mod _72_edit_distance;
 mod _96_unique_bst;
 mod _most_0xor_partition;
