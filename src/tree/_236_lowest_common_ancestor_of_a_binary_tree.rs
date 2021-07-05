@@ -4,8 +4,8 @@ struct Solution;
 
 impl Solution {
     fn lowest_common_ancestor(root: TreeLink, p: TreeLink, q: TreeLink) -> TreeLink {
-        let p_val = p.unwrap().borrow().val;
-        let q_val = q.unwrap().borrow().val;
+        let p_val = p.as_ref()?.borrow().val;
+        let q_val = q.as_ref()?.borrow().val;
         let mut res = None;
         let _ = root.find_lca(p_val, q_val, &mut res);
         res
@@ -18,7 +18,7 @@ trait Recur {
 
 impl Recur for TreeLink {
     fn find_lca(&self, p_val: i32, q_val: i32, lca: &mut TreeLink) -> ReturnData {
-        if let Some(node) = self {
+        if let Some(node) = self.as_ref() {
             let val = node.borrow().val;
             let left = node.borrow().left.find_lca(p_val, q_val, lca);
             let right = node.borrow().right.find_lca(p_val, q_val, lca);

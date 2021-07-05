@@ -1,6 +1,8 @@
 mod _10_regular_expression_matching;
 mod _198_house_robber;
 mod _221_maximal_square;
+mod _300_longest_increasing_subsequence;
+mod _309_best_time_to_buy_and_sell_stock_with_cooldown;
 mod _312_burst_balloons;
 mod _322_coin_change;
 mod _44_wildcard_matching;

@@ -31,8 +31,8 @@ impl Solution {
 
 #[test]
 fn test() {
-    let head = list!(1, 2, 2, 1);
-    assert_eq!(Solution::is_palindrome(&head), true);
+    let head = list!(1, 2, 1, 1);
+    assert_eq!(Solution::is_palindrome(&head), false);
     let head = list!(1, 2, 1);
     assert_eq!(Solution::is_palindrome(&head), true);
     let head = list!(1, 2, 3, 2, 1);
