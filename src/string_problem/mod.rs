@@ -4,6 +4,7 @@ mod _132_palindrome_partition_2;
 mod _139_word_break;
 mod _208_implement_trie;
 mod _32_longest_valid_parentheses;
+mod _394_decode_string;
 mod _3_length_of_longest_substring;
 mod _49_group_anagrams;
 mod _516_longest_palindrome_subseq;
