@@ -24,6 +24,8 @@ mod _33_search_rotate_nums;
 mod _347_top_k_frequent_elements;
 mod _34_find_first_and_last_position_of_elements_in_sorted_array;
 mod _42_trapping_rain_water;
+mod _448_find_all_numbers_disappeared_in_an_array;
+mod _461_hamming_distance;
 mod _48_rotate_image;
 mod _4_find_median_sorted_arrays;
 mod _517_super_washing_machines;
