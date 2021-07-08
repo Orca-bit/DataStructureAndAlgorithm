@@ -8,6 +8,8 @@ mod _394_decode_string;
 mod _3_length_of_longest_substring;
 mod _49_group_anagrams;
 mod _516_longest_palindrome_subseq;
+mod _647_palindromic_substrings;
+mod _763_partition_labels;
 mod _76_minimum_window_substring;
 mod _796_rotate_string;
 mod _get_value_from_string;

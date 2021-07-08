@@ -5,7 +5,7 @@ impl Manacher {
         if s.is_empty() {
             return "".to_string();
         }
-        let manacher_str = Self::manacher_string(&*s);
+        let manacher_str = Self::manacher_string(s.as_str());
         let mut p_arr = vec![1; manacher_str.len()]; // 回文半径数组
         let mut center = 0;
         let mut right = 0;
