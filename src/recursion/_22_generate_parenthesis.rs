@@ -3,29 +3,31 @@ struct Solution;
 impl Solution {
     pub fn generate_parenthesis(n: i32) -> Vec<String> {
         let mut res = vec![];
-        let mut path = vec![' '; (n << 1) as usize];
-        Self::process(&mut res, &mut path, 0, 0, n);
+        let mut path = vec![];
+        Self::process(&mut res, &mut path, 0, n, (n << 1) as usize);
         res
     }
 
     fn process(
         res: &mut Vec<String>,
         path: &mut Vec<char>,
-        index: usize,
         left_sum: i32,
         left_rest: i32,
+        total: usize,
     ) {
-        if index == path.len() {
+        if path.len() == total {
             res.push(path.iter().collect());
             return;
         }
         if left_rest > 0 {
-            path[index] = '(';
-            Self::process(res, path, index + 1, left_sum + 1, left_rest - 1);
+            path.push('(');
+            Self::process(res, path, left_sum + 1, left_rest - 1, total);
+            path.pop();
         }
         if left_sum > 0 {
-            path[index] = ')';
-            Self::process(res, path, index + 1, left_sum - 1, left_rest);
+            path.push(')');
+            Self::process(res, path, left_sum - 1, left_rest, total);
+            path.pop();
         }
     }
 }

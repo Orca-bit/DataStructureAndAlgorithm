@@ -28,7 +28,11 @@ impl Solution {
         }
         let res = if si == 0 && pi != 0 {
             if p[pi - 1] == '*' {
-                Self::process(s, p, si, pi - 2, dp)
+                // Self::process(s, p, si, pi - 2, dp)
+                match p[pi - 2] {
+                    '*' => false,
+                    _ => Self::process(s, p, si, pi - 2, dp),
+                }
             } else {
                 false
             }
@@ -82,6 +86,10 @@ fn test() {
     assert_eq!(Solution::is_match(s, p), res);
     let s = "mississippi".to_string();
     let p = "mis*is*p*.".to_string();
+    let res = false;
+    assert_eq!(Solution::is_match(s, p), res);
+    let s = "miss".to_string();
+    let p = "**.*".to_string();
     let res = false;
     assert_eq!(Solution::is_match(s, p), res);
 }

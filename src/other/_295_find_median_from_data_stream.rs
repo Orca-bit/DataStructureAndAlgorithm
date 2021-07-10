@@ -14,7 +14,8 @@ impl MedianFinder {
     }
 
     fn add_num(&mut self, num: i32) {
-        // 先压入小根堆，取出小根堆里最小的压入大根堆，并且确保两个堆的数据个数差不超过1，且小一半的个数更多
+        // 先压入大一半的小根堆，取出大一半里最小的压入小一半的大根堆，
+        // 并且确保两个堆的数据个数差不超过1，且小一半的个数更多
         self.hi.push(Reverse(num));
         let smallest = self.hi.pop().unwrap().0;
         self.lo.push(smallest);

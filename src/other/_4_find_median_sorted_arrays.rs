@@ -5,34 +5,33 @@ impl Solution {
         let len = nums1.len() + nums2.len();
         let even = len & 1 == 0;
         if !nums1.is_empty() && !nums2.is_empty() {
-            return if even {
+            if even {
                 (Self::find_kth_num(&nums1, &nums2, len / 2) as f64
                     + Self::find_kth_num(&nums1, &nums2, len / 2 + 1) as f64)
                     / 2.
             } else {
                 Self::find_kth_num(&nums1, &nums2, len / 2 + 1) as f64
-            };
+            }
         } else if !nums1.is_empty() {
-            return if even {
+            if even {
                 (nums1[(len - 1) >> 1] + nums1[len >> 1]) as f64 / 2.
             } else {
                 nums1[len >> 1] as f64
-            };
-        } else if !nums2.is_empty() {
-            return if even {
+            }
+        } else {
+            if even {
                 (nums2[(len - 1) >> 1] + nums2[len >> 1]) as f64 / 2.
             } else {
                 nums2[len >> 1] as f64
-            };
+            }
         }
-        0.
     }
 
     fn find_kth_num(arr1: &[i32], arr2: &[i32], k: usize) -> i32 {
         let longs = if arr1.len() >= arr2.len() { arr1 } else { arr2 };
         let shorts = if arr1.len() < arr2.len() { arr1 } else { arr2 };
         if k <= shorts.len() {
-            return Self::get_up_median(&shorts[0..k], &longs[0..k]);
+            return Self::up_median(&shorts[0..k], &longs[0..k]);
         }
         if k > longs.len() {
             if shorts[k - longs.len() - 1] >= *longs.last().unwrap() {
@@ -41,15 +40,16 @@ impl Solution {
             if longs[k - shorts.len() - 1] >= *shorts.last().unwrap() {
                 return longs[k - shorts.len() - 1];
             }
-            return Self::get_up_median(&shorts[k - longs.len()..], &longs[k - shorts.len()..]);
+            return Self::up_median(&shorts[k - longs.len()..], &longs[k - shorts.len()..]);
         }
         if longs[k - shorts.len() - 1] >= *shorts.last().unwrap() {
             return longs[k - shorts.len() - 1];
         }
-        Self::get_up_median(shorts, &longs[k - shorts.len()..k])
+        Self::up_median(shorts, &longs[k - shorts.len()..k])
     }
 
-    fn get_up_median(arr1: &[i32], arr2: &[i32]) -> i32 {
+    fn up_median(arr1: &[i32], arr2: &[i32]) -> i32 {
+        assert_eq!(arr1.len(), arr2.len());
         let mut s1 = 0;
         let mut s2 = 0;
         let mut e1 = arr1.len() - 1;
@@ -74,11 +74,8 @@ impl Solution {
 
 #[test]
 fn test() {
-    assert_eq!(
-        Solution::get_up_median(&vec![1, 2, 3, 4], &vec![3, 4, 5, 6]),
-        3
-    );
-    assert_eq!(Solution::get_up_median(&vec![0, 1, 2], &vec![3, 4, 5]), 2);
+    assert_eq!(Solution::up_median(&vec![1, 2, 3, 4], &vec![3, 4, 5, 6]), 3);
+    assert_eq!(Solution::up_median(&vec![0, 1, 2], &vec![3, 4, 5]), 2);
     assert_eq!(
         Solution::find_kth_num(&vec![1, 2, 3, 4, 5], &vec![3, 4, 5], 1),
         1
