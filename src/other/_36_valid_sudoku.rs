@@ -7,18 +7,18 @@ impl Solution {
         let mut cube = vec![vec![false; 10]; 9];
         for i in 0..9 {
             for j in 0..9 {
-                let cude_no = 3 * (i / 3) + j / 3;
+                let cube_no = 3 * (i / 3) + j / 3;
                 if board[i][j] != '.' {
                     let index = (board[i][j] as u8 - b'0') as usize;
                     if row[i][index] == true
                         || col[j][index] == true
-                        || cube[cude_no][index] == true
+                        || cube[cube_no][index] == true
                     {
                         return false;
                     }
                     row[i][index] = true;
                     col[j][index] = true;
-                    cube[cude_no][index] = true;
+                    cube[cube_no][index] = true;
                 }
             }
         }
