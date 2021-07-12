@@ -1,4 +1,5 @@
 mod _10_regular_expression_matching;
+mod _1411_number_of_ways_to_paint_n3_grid;
 mod _198_house_robber;
 mod _221_maximal_square;
 mod _300_longest_increasing_subsequence;
@@ -16,6 +17,7 @@ mod _688_knight_probability_in_chessboard;
 mod _70_climb_stairs;
 mod _718_maximum_length_of_repeated_subarray;
 mod _72_edit_distance;
+mod _91_decode_ways;
 mod _96_unique_bst;
 mod _most_0xor_partition;
 mod _num_decompose;

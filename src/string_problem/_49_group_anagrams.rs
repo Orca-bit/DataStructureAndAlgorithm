@@ -13,11 +13,12 @@ impl Solution {
             tmp.sort_unstable();
             map.entry(tmp).or_default().push(s.clone());
         }
-        let mut res = vec![];
-        for list in map.values() {
-            res.push(list.clone());
-        }
-        res
+        // let mut res = vec![];
+        // for list in map.values() {
+        //     res.push(list.clone());
+        // }
+        // res
+        map.values().map(|x| x.clone()).collect()
     }
 }
 

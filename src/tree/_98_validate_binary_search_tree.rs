@@ -9,36 +9,6 @@ impl Solution {
         }
         true
     }
-
-    fn is_valid_bst(root: TreeLink) -> bool { //rustgym 解法
-        let mut pre = None;
-        let mut res = true;
-        root.inorder(&mut |x| {
-            if let Some(y) = pre {
-                if x <= y {
-                    res = false;
-                    return;
-                }
-            }
-            pre = Some(x);
-        });
-        res
-    }
-}
-
-trait Inorder {
-    fn inorder(&self, action: &mut dyn FnMut(i32));
-}
-
-impl Inorder for TreeLink {
-    fn inorder(&self, action: &mut dyn FnMut(i32)) {
-        if let Some(node) = self {
-            let node = node.borrow();
-            node.left.inorder(action);
-            action(node.val);
-            node.right.inorder(action);
-        }
-    }
 }
 
 trait Recur {
