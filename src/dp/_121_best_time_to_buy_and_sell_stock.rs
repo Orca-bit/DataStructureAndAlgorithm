@@ -2,13 +2,13 @@ struct Solution;
 
 impl Solution {
     pub fn max_profit(prices: Vec<i32>) -> i32 {
-        let mut res = 0;
-        let mut min = prices[0];
-        for &price in prices.iter().skip(1) {
-            res = res.max(price - min);
-            min = min.min(price);
+        let mut buy = i32::MIN;
+        let mut sell = 0;
+        for price in prices {
+            buy = buy.max(-price);
+            sell = sell.max(buy + price);
         }
-        res
+        sell
     }
 }
 

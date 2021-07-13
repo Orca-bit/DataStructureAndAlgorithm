@@ -1,7 +1,7 @@
 #[macro_use]
 pub mod util;
+mod _118_pascal_triangle;
 mod _11_container_with_most_water;
-mod _121_best_time_to_buy_and_sell_stock;
 mod _128_longest_consecutive_sequence;
 mod _134_gas_station;
 mod _146_lru_cache;

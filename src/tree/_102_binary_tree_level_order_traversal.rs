@@ -16,10 +16,11 @@ impl Solution {
                 let size = queue.len();
                 for _ in 0..size {
                     let head = queue.pop_front()?;
-                    if head.is_some() {
-                        cur.push(head.clone()?.borrow().val);
-                        queue.push_back(head.clone()?.borrow().left.clone());
-                        queue.push_back(head.clone()?.borrow().right.clone());
+                    if let Some(node) = head {
+                        let node = node.borrow();
+                        cur.push(node.val);
+                        queue.push_back(node.left.clone());
+                        queue.push_back(node.right.clone());
                     }
                 }
                 if !cur.is_empty() {

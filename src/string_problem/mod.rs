@@ -1,4 +1,5 @@
 mod _1143_longest_common_subsequence;
+mod _125_valid_palindrome;
 mod _1312_min_insert;
 mod _132_palindrome_partition_2;
 mod _139_word_break;
