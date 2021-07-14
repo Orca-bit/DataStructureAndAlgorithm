@@ -1,5 +1,3 @@
-use std::cmp::min;
-
 struct Solution;
 
 impl Solution {
@@ -44,15 +42,36 @@ impl Solution {
         let mut res = i32::MAX;
         for end in index..s.len() {
             if is_palindrome[index][end] {
-                res = min(res, Self::process(s, end + 1, is_palindrome, dp) + 1);
+                res = res.min(Self::process(s, end + 1, is_palindrome, dp) + 1);
             }
         }
         dp[index] = Some(res);
         res
+    }
+
+    fn dp(s: String) -> i32 {
+        if s.is_empty() || s.len() == 1 {
+            return 0;
+        }
+        let s = s.chars().collect::<Vec<_>>();
+        let n = s.len();
+        let mut dp = vec![i32::MAX; n + 1];
+        dp[n] = -1;
+        let mut is_palindrome = vec![vec![false; n]; n];
+        for i in (0..n).rev() {
+            for j in i..n {
+                if s[i] == s[j] && (j - i < 2 || is_palindrome[i + 1][j - 1]) {
+                    is_palindrome[i][j] = true;
+                    dp[i] = dp[i].min(dp[j + 1] + 1);
+                }
+            }
+        }
+        dp[0]
     }
 }
 
 #[test]
 fn test() {
     assert_eq!(Solution::min_cut("aa".to_string()), 0);
+    assert_eq!(Solution::dp("aa".to_string()), 0);
 }

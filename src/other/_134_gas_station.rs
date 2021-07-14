@@ -3,34 +3,33 @@ struct Solution;
 impl Solution {
     pub fn can_complete_circuit(gas: Vec<i32>, mut cost: Vec<i32>) -> i32 {
         let mut res = -1;
-        let n = gas.len();
         let mut init = 0;
-        for i in 0..n {
+        for i in 0..cost.len() {
             cost[i] = gas[i] - cost[i];
-            if cost[i] >= 0 {
+            if cost[i] > 0 {
                 init = i;
             }
         }
-        let get_next_index = |now: usize| -> usize {
-            if now == n - 1 {
+        let get_next = |now: usize| -> usize {
+            if now == cost.len() - 1 {
                 0
             } else {
                 now + 1
             }
         };
-        let get_last_index = |now: usize| -> usize {
+        let get_last = |now: usize| -> usize {
             if now == 0 {
-                n - 1
+                cost.len() - 1
             } else {
                 now - 1
             }
         };
         let mut start = init;
-        let mut end = get_next_index(start);
-        let mut need = 0;
+        let mut end = get_next(init);
         let mut rest = 0;
+        let mut need = 0;
         loop {
-            if start != init && start == get_last_index(end) {
+            if start != init && start == get_last(end) {
                 break;
             }
             if cost[start] < need {
@@ -40,14 +39,14 @@ impl Solution {
                 need = 0;
                 while rest >= 0 && end != start {
                     rest += cost[end];
-                    end = get_next_index(end);
+                    end = get_next(end);
                 }
                 if rest >= 0 {
                     res = start as i32;
                     break;
                 }
             }
-            start = get_last_index(start);
+            start = get_last(start);
             if start == init {
                 break;
             }

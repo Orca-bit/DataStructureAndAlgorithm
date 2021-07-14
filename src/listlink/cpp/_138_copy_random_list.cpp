@@ -16,10 +16,9 @@ public:
     }
 };
 
-
 class Solution {
 public:
-    Node* copy_random_list(Node* head) {
+    static Node* copy_random_list(Node* head) {
         unordered_map<Node*, Node*> map;
         Node* cur = head;
         while (cur != nullptr) {
@@ -35,7 +34,7 @@ public:
         return map[head];
     }
 
-    Node* copy_random_list_1(Node* head) {
+    static Node* copy_random_list_1(Node* head) {
         if (head == nullptr) return nullptr;
         Node* cur = head;
         Node* next = nullptr;

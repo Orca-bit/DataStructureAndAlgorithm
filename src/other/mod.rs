@@ -3,6 +3,7 @@ pub mod util;
 mod _118_pascal_triangle;
 mod _11_container_with_most_water;
 mod _128_longest_consecutive_sequence;
+mod _130_surrounded_regions;
 mod _134_gas_station;
 mod _146_lru_cache;
 mod _152_maximum_product_subarray;

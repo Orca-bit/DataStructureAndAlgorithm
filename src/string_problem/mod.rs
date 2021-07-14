@@ -1,6 +1,8 @@
 mod _1143_longest_common_subsequence;
 mod _125_valid_palindrome;
+mod _127_word_ladder;
 mod _1312_min_insert;
+mod _131_palindrome_partitioning;
 mod _132_palindrome_partition_2;
 mod _139_word_break;
 mod _13_roman_to_integer;
