@@ -16,6 +16,8 @@ mod _166_fraction_to_recurring_decimal;
 mod _169_majority_element;
 mod _172_factorial_trailing_zeroes;
 mod _189_rotate_array;
+mod _202_happy_number;
+mod _204_count_primes;
 mod _20_valid_parentheses;
 mod _215_kth_largest_element_in_an_array;
 mod _218_the_skyline_problem;
