@@ -20,6 +20,7 @@ mod _202_happy_number;
 mod _204_count_primes;
 mod _20_valid_parentheses;
 mod _215_kth_largest_element_in_an_array;
+mod _217_contains_duplicate;
 mod _218_the_skyline_problem;
 mod _238_product_of_array_except_self;
 mod _240_search_a_2d_matrix_2;
