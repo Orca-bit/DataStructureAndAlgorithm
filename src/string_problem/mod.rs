@@ -13,6 +13,7 @@ mod _171_excel_sheet_column_number;
 mod _208_implement_trie;
 mod _212_word_search_2;
 mod _227_basic_calculator_2;
+mod _242_valid_anagram;
 mod _28_implement_str_str;
 mod _32_longest_valid_parentheses;
 mod _394_decode_string;

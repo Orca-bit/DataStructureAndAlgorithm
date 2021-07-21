@@ -24,7 +24,7 @@ impl Solution {
             return 1;
         }
         let mut i = 1;
-        while i * i <= n {
+        while i * i <= n / 2 {
             let j = f64::sqrt((n - i * i) as f64) as i32;
             if i * i + j * j == n {
                 return 2;
