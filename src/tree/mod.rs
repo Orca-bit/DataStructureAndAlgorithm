@@ -6,6 +6,7 @@ mod _103_binary_tree_zigzag_level_order_traversal;
 mod _104_maximum_depth_of_binary_tree;
 mod _105_construct_binary_tree_from_preorder_and_inorder_traversal;
 mod _108_convert_sorted_array_binary_search_tree;
+mod _1104_path_in_zigzag_labelled_binary_tree;
 mod _110_balance_binary_tree;
 mod _111_minimum_depth_of_binary_tree;
 mod _114_flatten_binary_tree_to_linked_list;

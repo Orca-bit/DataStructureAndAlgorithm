@@ -6,4 +6,5 @@ mod _21_merge_two_sorted_lists;
 mod _234_palindrome_linked_list;
 mod _23_merge_k_sorted_lists;
 mod _2_add_two_numbers;
+mod _382_linked_list_random_node;
 mod partition;

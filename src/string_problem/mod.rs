@@ -24,6 +24,7 @@ mod _647_palindromic_substrings;
 mod _763_partition_labels;
 mod _76_minimum_window_substring;
 mod _796_rotate_string;
+mod _820_short_encoding_of_words;
 mod _8_string_to_integer;
 mod _get_value_from_string;
 mod _is_scramble;

@@ -5,31 +5,28 @@ struct Solution;
 
 impl Solution {
     fn level_order(root: TreeLink) -> Vec<Vec<i32>> {
-        let core = || -> Option<Vec<Vec<i32>>> {
-            let mut res = vec![];
-            let mut queue = VecDeque::new();
-            if root.is_some() {
-                queue.push_back(root.clone());
-            }
-            while !queue.is_empty() {
-                let mut cur = vec![];
-                let size = queue.len();
-                for _ in 0..size {
-                    let head = queue.pop_front()?;
-                    if let Some(node) = head {
-                        let node = node.borrow();
-                        cur.push(node.val);
-                        queue.push_back(node.left.clone());
-                        queue.push_back(node.right.clone());
-                    }
+        let mut res = vec![];
+        let mut deq = VecDeque::new();
+        if let Some(node) = root {
+            deq.push_back(Rc::clone(&node));
+        }
+        while !deq.is_empty() {
+            let size = deq.len();
+            let mut tmp = vec![];
+            for _ in 0..size {
+                let node = deq.pop_front().unwrap();
+                let node = node.borrow();
+                tmp.push(node.val);
+                if let Some(ref node_left) = node.left {
+                    deq.push_back(Rc::clone(node_left));
                 }
-                if !cur.is_empty() {
-                    res.push(cur);
+                if let Some(ref node_right) = node.right {
+                    deq.push_back(Rc::clone(node_right));
                 }
             }
-            Some(res)
-        };
-        core().unwrap()
+            res.push(tmp);
+        }
+        res
     }
 }
 

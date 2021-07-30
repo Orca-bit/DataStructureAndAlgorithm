@@ -23,6 +23,7 @@ mod _714_best_time_to_buy_and_sell_stock_with_transaction_fee;
 mod _718_maximum_length_of_repeated_subarray;
 mod _72_edit_distance;
 mod _91_decode_ways;
+mod _931_minimum_falling_path_sum;
 mod _96_unique_bst;
 mod _most_0xor_partition;
 mod _num_decompose;
