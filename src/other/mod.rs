@@ -3,6 +3,7 @@ pub mod util;
 mod _118_pascal_triangle;
 mod _11_container_with_most_water;
 mod _1260_shift_2d_grid;
+mod _1283_find_the_smallest_divisor_given_a_threshold;
 mod _128_longest_consecutive_sequence;
 mod _130_surrounded_regions;
 mod _134_gas_station;
