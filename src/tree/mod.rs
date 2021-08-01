@@ -21,6 +21,7 @@ mod _538_convert_bst_to_greater_tree;
 mod _543_diameter_of_binary_tree;
 mod _617_merge_two_binary_trees;
 mod _622_maximum_width_of_binary_tree;
+mod _687_longest_univalue_path;
 mod _98_validate_binary_search_tree;
 mod _build_tree;
 mod _get_max_distance;
