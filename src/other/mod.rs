@@ -74,3 +74,4 @@ mod _largest_xor;
 mod _lcp_28_purchase_plans;
 mod _least_boat;
 mod _offer21_exchange_odd_and_even;
+mod _lcp18_breakfast_number;
