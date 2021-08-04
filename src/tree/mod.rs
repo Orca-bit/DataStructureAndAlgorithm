@@ -17,6 +17,7 @@ mod _236_lowest_common_ancestor_of_a_binary_tree;
 mod _297_serialize_and_deserialize_binary_tree;
 mod _337_house_robber_3;
 mod _437_path_sum_3;
+mod _530_minimum_absolute_difference_in_bst;
 mod _538_convert_bst_to_greater_tree;
 mod _543_diameter_of_binary_tree;
 mod _617_merge_two_binary_trees;

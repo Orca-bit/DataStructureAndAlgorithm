@@ -1,5 +1,6 @@
 #[macro_use]
 pub mod util;
+mod _1090_largest_values_from_labels;
 mod _118_pascal_triangle;
 mod _11_container_with_most_water;
 mod _1260_shift_2d_grid;
@@ -9,8 +10,10 @@ mod _1300_sum_of_mutated_array_closest_to_target;
 mod _130_surrounded_regions;
 mod _134_gas_station;
 mod _146_lru_cache;
+mod _1481_least_number_of_unique_integers_after_k_removals;
 mod _149_max_points_on_a_line;
 mod _150_evaluate_reverse_polish_notation;
+mod _1512_number_of_good_pairs;
 mod _152_maximum_product_subarray;
 mod _155_min_stack;
 mod _15_three_sum;
@@ -70,6 +73,7 @@ mod _73_set_matrix_zeroes;
 mod _74_search_a_2d_matrix;
 mod _75_sort_colors;
 mod _7_reverse_integer;
+mod _832_flipping_an_image;
 mod _88_merge_sorted_array;
 mod _895_maximum_frequency_stack;
 mod _largest_xor;
