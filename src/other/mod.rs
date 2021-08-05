@@ -1,8 +1,10 @@
 #[macro_use]
 pub mod util;
 mod _1090_largest_values_from_labels;
+mod _1103_distribute_candies_to_people;
 mod _118_pascal_triangle;
 mod _11_container_with_most_water;
+mod _1200_minimum_absolute_difference;
 mod _1260_shift_2d_grid;
 mod _1283_find_the_smallest_divisor_given_a_threshold;
 mod _128_longest_consecutive_sequence;
@@ -18,6 +20,7 @@ mod _152_maximum_product_subarray;
 mod _155_min_stack;
 mod _15_three_sum;
 mod _162_find_peak_element;
+mod _1658_minimum_operations_to_reduce_x_to_zero;
 mod _166_fraction_to_recurring_decimal;
 mod _169_majority_element;
 mod _1711_count_good_meals;
@@ -75,7 +78,9 @@ mod _75_sort_colors;
 mod _7_reverse_integer;
 mod _832_flipping_an_image;
 mod _88_merge_sorted_array;
+mod _892_surface_area_of_3d_shapes;
 mod _895_maximum_frequency_stack;
+mod _896_monotonic_array;
 mod _largest_xor;
 mod _lcp18_breakfast_number;
 mod _lcp_28_purchase_plans;
