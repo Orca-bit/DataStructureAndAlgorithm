@@ -1,3 +1,4 @@
+mod _135_candy;
 mod _1578_minimum_deleteion_cost_to_avoid_repeating_letters;
 mod _179_largest_number;
 mod _406_queue_reconstruction_by_height;
