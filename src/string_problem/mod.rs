@@ -1,5 +1,6 @@
 mod _1143_longest_common_subsequence;
 mod _1169_invalid_transactions;
+mod _1208_get_equal_substrings_within_budget;
 mod _125_valid_palindrome;
 mod _127_word_ladder;
 mod _1312_min_insert;
@@ -35,6 +36,7 @@ mod _796_rotate_string;
 mod _820_short_encoding_of_words;
 mod _859_buddy_strings;
 mod _8_string_to_integer;
+mod _953_verifying_an_alien_dictionary;
 mod _get_value_from_string;
 mod _interview_17_05_find_longest_subarray;
 mod _is_scramble;
