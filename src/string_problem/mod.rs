@@ -1,3 +1,4 @@
+mod _1032_stream_of_characters;
 mod _1143_longest_common_subsequence;
 mod _1169_invalid_transactions;
 mod _1208_get_equal_substrings_within_budget;

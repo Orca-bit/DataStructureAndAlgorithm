@@ -23,6 +23,7 @@ mod _543_diameter_of_binary_tree;
 mod _617_merge_two_binary_trees;
 mod _622_maximum_width_of_binary_tree;
 mod _687_longest_univalue_path;
+mod _814_binary_tree_pruning;
 mod _863_all_nodes_distance_k_in_binary_tree;
 mod _98_validate_binary_search_tree;
 mod _build_tree;

@@ -86,6 +86,7 @@ mod _895_maximum_frequency_stack;
 mod _896_monotonic_array;
 mod _914_x_of_a_kind_in_a_deck_of_cards;
 mod _946_validate_stack_sequences;
+mod _interview_10_11_peeks_and_valleys;
 mod _interview_16_21_find_swap_values;
 mod _largest_xor;
 mod _lcp18_breakfast_number;
