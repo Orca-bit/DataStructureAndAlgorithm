@@ -28,6 +28,7 @@ mod _172_factorial_trailing_zeroes;
 mod _1743_restore_the_array_from_adjacent_pairs;
 mod _1797_design_authentication_manager;
 mod _1806_minimum_number_of_operations_to_reinitialize_a_permutation;
+mod _1871_jump_game_vii;
 mod _189_rotate_array;
 mod _202_happy_number;
 mod _204_count_primes;
