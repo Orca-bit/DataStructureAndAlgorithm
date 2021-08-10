@@ -34,3 +34,4 @@ mod _96_unique_bst;
 mod _most_0xor_partition;
 mod _num_decompose;
 mod _robot_walk;
+mod _1871_jump_game_vii;
