@@ -1,4 +1,5 @@
 mod _1032_stream_of_characters;
+mod _1048_longest_string_chain;
 mod _1143_longest_common_subsequence;
 mod _1169_invalid_transactions;
 mod _1208_get_equal_substrings_within_budget;
@@ -30,6 +31,7 @@ mod _49_group_anagrams;
 mod _516_longest_palindrome_subseq;
 mod _539_minimum_time_difference;
 mod _647_palindromic_substrings;
+mod _648_replace_words;
 mod _763_partition_labels;
 mod _76_minimum_window_substring;
 mod _791_custom_sort_string;
