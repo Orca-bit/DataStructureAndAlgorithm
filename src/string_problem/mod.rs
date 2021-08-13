@@ -45,4 +45,5 @@ mod _interview_17_05_find_longest_subarray;
 mod _is_scramble;
 mod _kmp;
 mod _manacher;
+mod _offer_05_convert_space;
 mod _remove_methods_to_palindrome;
