@@ -57,6 +57,7 @@ mod _41_first_missing_positive;
 mod _42_trapping_rain_water;
 mod _436_find_right_interval;
 mod _448_find_all_numbers_disappeared_in_an_array;
+mod _455_assign_cookies;
 mod _461_hamming_distance;
 mod _475_heaters;
 mod _48_rotate_image;

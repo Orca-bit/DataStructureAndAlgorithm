@@ -6,6 +6,7 @@ mod _122_best_time_to_buy_and_sell_stock_2;
 mod _123_best_time_to_buy_and_sell_stock_3;
 mod _1269_number_of_ways_to_stay_in_the_same_place_after_some_steps;
 mod _1411_number_of_ways_to_paint_n3_grid;
+mod _1504_count_submatrices_with_all_ones;
 mod _1691_maximum_height_by_stacking_cuboids;
 mod _1871_jump_game_vii;
 mod _188_best_time_to_buy_and_sell_stock_4;
