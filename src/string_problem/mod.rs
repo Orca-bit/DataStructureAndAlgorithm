@@ -1,6 +1,7 @@
 mod _1032_stream_of_characters;
 mod _1048_longest_string_chain;
 mod _1143_longest_common_subsequence;
+mod _1156_swap_for_longest_repeated_character_substring;
 mod _1169_invalid_transactions;
 mod _1208_get_equal_substrings_within_budget;
 mod _125_valid_palindrome;
@@ -39,6 +40,7 @@ mod _796_rotate_string;
 mod _820_short_encoding_of_words;
 mod _859_buddy_strings;
 mod _8_string_to_integer;
+mod _949_largest_time_for_given_digits;
 mod _953_verifying_an_alien_dictionary;
 mod _get_value_from_string;
 mod _interview_17_05_find_longest_subarray;
