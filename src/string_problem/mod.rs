@@ -33,6 +33,7 @@ mod _516_longest_palindrome_subseq;
 mod _539_minimum_time_difference;
 mod _647_palindromic_substrings;
 mod _648_replace_words;
+mod _676_implement_magic_dictionary;
 mod _763_partition_labels;
 mod _76_minimum_window_substring;
 mod _791_custom_sort_string;
