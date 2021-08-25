@@ -33,6 +33,7 @@ mod _72_edit_distance;
 mod _837_new_21_game;
 mod _91_decode_ways;
 mod _931_minimum_falling_path_sum;
+mod _956_tallest_billboard;
 mod _96_unique_bst;
 mod _most_0xor_partition;
 mod _num_decompose;

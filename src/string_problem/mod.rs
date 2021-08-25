@@ -1,5 +1,6 @@
 mod _1032_stream_of_characters;
 mod _1048_longest_string_chain;
+mod _1078_occurrences_after_bigram;
 mod _1143_longest_common_subsequence;
 mod _1156_swap_for_longest_repeated_character_substring;
 mod _1169_invalid_transactions;
