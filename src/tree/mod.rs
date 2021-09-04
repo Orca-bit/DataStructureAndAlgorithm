@@ -31,6 +31,7 @@ mod _98_validate_binary_search_tree;
 mod _build_tree;
 mod _get_max_distance;
 mod _get_max_happy;
+mod _interview_04_12_path_sum;
 mod _lcp_10_task_allocation;
 mod print_folds;
 mod traversal;
